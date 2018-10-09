@@ -12,16 +12,22 @@ class CohortsController < ApplicationController
   def show
     @cohort = Cohort.find(params[:id])
      @students = Student.where(cohort_id: @cohort.id)
+     @instructor = @cohort.instructor
+     @course = @cohort.course
   end
 
   # GET /cohorts/new
   def new
     @cohort = Cohort.new
+    @courses = Course.all
+    @instructors = Instructor.all
   end
 
   # GET /cohorts/1/edit
   def edit
     @cohort = Cohort.find(params[:id])
+    @courses = Course.all
+    @instructors = Instructor.all
   end
 
   # POST /cohorts
