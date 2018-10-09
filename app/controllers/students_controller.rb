@@ -10,15 +10,20 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @student = Student.find(params[:id])
+    @cohort = @student.cohort
   end
 
   # GET /students/new
   def new
     @student = Student.new
+    @cohorts = Cohort.all
   end
 
   # GET /students/1/edit
   def edit
+    @student = Student.find(params[:id])
+    @cohorts = Cohort.all
   end
 
   # POST /students
