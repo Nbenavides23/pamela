@@ -10,6 +10,7 @@ class InstructorsController < ApplicationController
   # GET /instructors/1
   # GET /instructors/1.json
   def show
+    @instructor = Instructor.find(params[:id])
   end
 
   # GET /instructors/new
@@ -19,6 +20,8 @@ class InstructorsController < ApplicationController
 
   # GET /instructors/1/edit
   def edit
+    instructor = Instructor.find(params[:id])
+
   end
 
   # POST /instructors
