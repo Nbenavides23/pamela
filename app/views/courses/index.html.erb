@@ -11,11 +11,8 @@
      
         <% @courses.each do |course| %>
         
-        <tr id="course-<%= course.id %>">
+        <tr id="courses-<%= course.id %>">
             <td>
-            <a class="item">
-            <img class="ui mini circular image" src=" https://www.shareicon.net/data/128x128/2015/05/04/33053_school_48x48.png"">
-            </a>
             <a href="/courses/<%= course.id%>"> <%= course.name %> </a></td>
             <td> Total Hours: <%= course.hours %> </td>
 

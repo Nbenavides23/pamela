@@ -3,3 +3,4 @@ class Cohort < ApplicationRecord
     belongs_to :instructor
     has_many :students, :dependent => :nullify
 end
+

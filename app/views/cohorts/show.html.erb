@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="ui form">
+<div class="ui equal widthform">
 <p>
   <strong>Name:</strong>
   <%= @cohort.name %>
@@ -33,5 +33,5 @@
 </ul>
 </div>
 
-<%= link_to 'Edit', edit_cohort_path(@cohort) %> |
-<%= link_to 'Back', cohorts_path %>
+<%= link_to 'Edit', edit_cohort_path(@cohort), :class=> "ui tiny olive button" %> |
+<%= link_to 'Back', cohorts_path, :class=> "ui tiny olive button"  %>
