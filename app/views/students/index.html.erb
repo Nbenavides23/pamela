@@ -1,26 +1,25 @@
 <p id="notice"><%= notice %></p>
 <% if current_admin %>
 <table class="ui fixed single line celled esponsive table">
-<h1 class="students">Students</h1><%=link_to "Add", new_student_path(@student), :class=> "ui tiny olive button" %>
-
-<table>
+<h1 class="students">Students</h1>
   <thead>
     <tr>
       <th>First name</th>
       <th>Last name</th>
       <th>Age</th>
       <th>Cohort</th>
+      <TH>Options</th>
     </tr>
   </thead>
 
   <tbody>
     <% @students.each do |student| %>
       <tr id="student-<%= student.id %>">
-      <a href="/students/<%= student.id %>">
+      
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
         <td><%= student.age %></td>
-        <td><%= student.cohort_id %></td></a>
+        
 
         <% if student.cohort.nil? %>
            <% else %>
@@ -32,10 +31,11 @@
              <%= link_to 'Edit', edit_student_path(student), :class=> "ui tiny olive button"%>
              <%= link_to 'Delete', student_path(student), method: :delete, remote:true, data: { confirm: 'Are you sure?' }, :class=> "ui tiny olive button" %>
            </td>
+           </tr>
     <% end %>
   </tbody>
 </table>
 <% end %>
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<%= link_to 'New Student', new_student_path, :class=> "ui tiny olive button" %>

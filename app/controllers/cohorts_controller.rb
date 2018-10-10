@@ -5,6 +5,7 @@ class CohortsController < ApplicationController
   # GET /cohorts.json
   def index
     @cohorts = Cohort.all
+    
   end
 
   # GET /cohorts/1

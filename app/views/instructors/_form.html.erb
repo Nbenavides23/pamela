@@ -1,4 +1,4 @@
-<div class="ui form">
+<div class="ui equal widthform">
 <%= form_with(model: instructor, local: true) do |form| %>
   <% if instructor.errors.any? %>
     <div id="error_explanation">
@@ -29,7 +29,8 @@
 
   <div class="field">
     <%= form.label :education %>
-    <%= form.text_field :education %>
+    <%= form.select :education, [ 'High School', 'College', 'Masters', 'PhD' ], :prompt => 'Select One' %> 
+        
   </div>
 
   <div class="field">

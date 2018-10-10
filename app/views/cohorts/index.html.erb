@@ -1,35 +1,44 @@
 <p id="notice"><%= notice %></p>
-
-<table>
+<% if current_admin %>
+<table class="ui fixed single line celled esponsive table">
+<h1 class="cohorts">Cohorts</h1>
   <thead>
-    <tr><h1 class="cohorts">Cohorts</h1></tr><%=link_to "Add", new_cohort_path(@cohort), :class=> "ui tiny olive button"%>
+    <tr>
       <th>Name</th>
       <th>Star date</th>
       <th>End sate</th>
       <th>Course</th>
       <th>Instructor</th>
+      <th>Options</th>
     </tr>
   </thead>
 
   <tbody>
     <% @cohorts.each do |cohort| %>
       <tr id="cohort-<%= cohort.id %>">
-      <td><a href="/cohorts/<%= cohort.id%>">
         <td><%= cohort.name %></td>
         <td><%= cohort.star_date %></td>
         <td><%= cohort.end_sate %></td>
         <td><%= cohort.course_id %></td>
-        <td><%= cohort.instructor_id %></a></td>
+
+        <% if cohort.instructor_id.nil?%>
+        <td>Currently no instructor</td>
+    <%else%>
+        <% @instructor = Instructor.find(cohort.instructor_id) %>
+        <td> <a href="/instructors/<%= cohort.instructor.id %>"> <%= @instructor.last_name %> </a> </td>
+    <%end%>
 
 
-        <td><%= link_to 'Show', cohort,:class=> "ui tiny olive button"  %></td>
-        <td><%= link_to 'Edit', edit_cohort_path(cohort), :class=> "ui tiny olive button" %></td>
+        <td>
+        <%= link_to 'Show', cohort,:class=> "ui tiny olive button"  %>
+        <%= link_to 'Edit', edit_cohort_path(cohort), :class=> "ui tiny olive button" %>
         <%= link_to 'Delete', cohort_path(cohort), method: :delete, remote:true, data: { confirm: 'Are you sure?' }, :class=> "ui tiny olive button" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<% end %>
 <br>
 
-<%= link_to 'New Cohort', new_cohort_path %>
+<%= link_to 'New Cohort', new_cohort_path, :class=> "ui tiny olive button" %>

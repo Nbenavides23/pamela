@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<div class="ui form">
 <p>
   <strong>Name:</strong>
   <%= @cohort.name %>
@@ -22,8 +23,15 @@
 
 <p>
   <strong>Instructor:</strong>
-  <%= @cohort.instructor_id %>
+  <%= @instructor.first_name%>
 </p>
+<ul>
+  <strong>Students :</strong>
+  <% @students.each do |student| %>
+    <li><a href="/students/<%= student.id%>"><%=student.first_name%></a></li>
+   <%end%>
+</ul>
+</div>
 
 <%= link_to 'Edit', edit_cohort_path(@cohort) %> |
 <%= link_to 'Back', cohorts_path %>

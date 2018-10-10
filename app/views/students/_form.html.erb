@@ -1,4 +1,4 @@
-<div class="ui form">
+<div class="ui equal widthform">
 <%= form_with(model: student, local: true) do |form| %>
   <% if student.errors.any? %>
     <div id="error_explanation">
@@ -29,7 +29,11 @@
 
   <div class="field">
     <%= form.label :cohort_id %>
-    <%= form.number_field :cohort_id %>
+    <%= form.select(:cohort_id) do %>
+      <% @cohorts.order('name ASC').each do |cohort_select| %>
+        <%= content_tag(:option, cohort_select.name, value: cohort_select.id) %>
+      <% end %>
+  <% end %>
   </div>
 
   <div class="actions">

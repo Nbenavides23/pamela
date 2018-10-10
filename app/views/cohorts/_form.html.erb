@@ -1,4 +1,4 @@
-<div class="ui form">
+<div class="ui equal widthform">
 <%= form_with(model: cohort, local: true) do |form| %>
   <% if cohort.errors.any? %>
     <div id="error_explanation">
@@ -19,22 +19,30 @@
 
   <div class="field">
     <%= form.label :star_date %>
-    <%= form.date_select :star_date %>
+    <%= form.date_field :star_date %>
   </div>
 
   <div class="field">
     <%= form.label :end_sate %>
-    <%= form.date_select :end_sate %>
+    <%= form.date_field :end_sate %>
   </div>
 
   <div class="field">
     <%= form.label :course_id %>
-    <%= form.number_field :course_id %>
+    <%= form.select(:course_id) do %>
+      <% @courses.order('name ASC').each do |course_select| %>
+        <%= content_tag(:option, course_select.name, value: course_select.id) %>
+      <% end %>
+  <% end %>
   </div>
 
   <div class="field">
     <%= form.label :instructor_id %>
-    <%= form.number_field :instructor_id %>
+    <%= form.select(:instructor_id) do %>
+      <% @instructors.order('last_name ASC').each do |instructor_select| %>
+        <%= content_tag(:option, instructor_select.last_name, value: instructor_select.id) %>
+      <% end %>
+  <% end %>
   </div>
 
   <div class="actions">

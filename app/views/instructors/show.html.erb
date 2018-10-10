@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="ui form">
 <p>
   <strong>First name:</strong>
   <%= @instructor.first_name %>
@@ -24,6 +24,6 @@
   <strong>Age:</strong>
   <%= @instructor.age %>
 </p>
-
+</div>
 <%= link_to 'Edit', edit_instructor_path(@instructor) %> |
 <%= link_to 'Back', instructors_path %>
