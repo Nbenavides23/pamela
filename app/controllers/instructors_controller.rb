@@ -5,12 +5,14 @@ class InstructorsController < ApplicationController
   # GET /instructors.json
   def index
     @instructors = Instructor.all
+    
   end
 
   # GET /instructors/1
   # GET /instructors/1.json
   def show
     @instructor = Instructor.find(params[:id])
+    @cohort = Cohort.find_by(instructor_id: @instructor.id)
   end
 
   # GET /instructors/new

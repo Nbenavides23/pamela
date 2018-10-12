@@ -25,11 +25,16 @@
                 <td><%= instructor.education %></td>
                 <td><%= instructor.age %></td>
 
+               
+
             <% if instructor.cohorts.nil? %>
             <p> not availiable <p>
+
             <% else %>
-             <% @cohort= instructor.cohorts %>
+
+            <% @cohort= instructor.cohorts %>
             <td><a href="/cohorts/<%= @cohort_id %>"> <%= @cohort.name %> </a></td>
+
              <% end %>
                 <td> 
                     <%= link_to 'Show', instructor, :class=> "ui tiny olive button"%>

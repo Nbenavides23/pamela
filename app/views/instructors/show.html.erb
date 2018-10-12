@@ -24,6 +24,15 @@
   <strong>Age:</strong>
   <%= @instructor.age %>
 </p>
+<p>
+<strong>Cohort</strong>
+<%if @cohort.nil?%>
+<a>Not assigned to a Cohort</a>
+<%else%>
+<a href="/cohorts/<%=@cohort.id%>"><%=@cohort.name%></a>
+<%end%>
+</p>
+
 </div>
 <%= link_to 'Edit', edit_instructor_path(@instructor), :class=> "ui tiny olive button" %> |
 <%= link_to 'Back', instructors_path, :class=> "ui tiny olive button" %>
