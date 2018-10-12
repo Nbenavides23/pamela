@@ -19,14 +19,21 @@
         <td><%= cohort.name %></td>
         <td><%= cohort.star_date %></td>
         <td><%= cohort.end_sate %></td>
-        <td><%= cohort.course_id %></td>
-
-        <% if cohort.instructor_id.nil?%>
+        
+     
+        <% if cohort.course_id.nil? %>
         <td>Currently no instructor</td>
-    <%else%>
+    <% else %>
+        <% @course = Course.find(cohort.course_id) %>
+        <td> <a href="/courses/<%= cohort.course.id %>"> <%= @course.name %> </a> </td>
+    <% end %>
+
+        <% if cohort.instructor_id.nil? %>
+        <td>Currently no instructor</td>
+    <% else %>
         <% @instructor = Instructor.find(cohort.instructor_id) %>
         <td> <a href="/instructors/<%= cohort.instructor.id %>"> <%= @instructor.last_name %> </a> </td>
-    <%end%>
+    <% end %>
 
 
         <td>

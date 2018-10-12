@@ -30,7 +30,7 @@
             <% else %>
              <% @cohort= instructor.cohorts %>
             <td><a href="/cohorts/<%= @cohort_id %>"> <%= @cohort.name %> </a></td>
-             <% end %>4
+             <% end %>
                 <td> 
                     <%= link_to 'Show', instructor, :class=> "ui tiny olive button"%>
                     <%= link_to 'Edit', edit_instructor_path(instructor), :class=> "ui tiny olive button"%>

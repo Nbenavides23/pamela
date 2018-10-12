@@ -18,7 +18,7 @@
 
 <p>
   <strong>Course:</strong>
-  <%= @cohort.course_id %>
+  <%= @cohort.course.name %>
 </p>
 
 <p>
@@ -34,4 +34,4 @@
 </div>
 
 <%= link_to 'Edit', edit_cohort_path(@cohort), :class=> "ui tiny olive button" %> |
-<%= link_to 'Back', cohorts_path, :class=> "ui tiny olive button"  %>
+<%= link_to 'Back', cohorts_path, :class=> "ui tiny olive button" %>

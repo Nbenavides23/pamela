@@ -25,7 +25,7 @@
            <% else %>
         <% @cohort = Cohort.find(student.cohort_id) %>
         <td> <a href="/cohorts/<%= @cohort_id %>"> <%= @cohort.name %> </a></td>
-          <%end %>
+          <% end %>
             <td> 
             <%= link_to 'Show', student, :class=> "ui tiny olive button"%>
              <%= link_to 'Edit', edit_student_path(student), :class=> "ui tiny olive button"%>
