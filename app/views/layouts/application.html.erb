@@ -51,11 +51,16 @@
         
       </div>
       <% end %>
+      <% if !current_admin %>
+      <div class="ui paddent center aligned text container piled grey segment">
+      <% else %>
 
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-    
+      <% end %>
+
         <%= yield %>
+      </div>
 </div>
  
 
