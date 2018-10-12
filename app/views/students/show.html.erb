@@ -17,7 +17,11 @@
 
 <p>
   <strong>Cohort:</strong>
-  <%= @student.cohort_id %>
+  <%if @cohort.nil?%>
+  <a>Not assigned to a Cohort</a>
+  <%else%>
+  <%= @cohort.name %>
+  <%end%>
 </p>
 </div>
 <%= link_to 'Edit', edit_student_path(@student), :class=> "ui tiny olive button" %> |
