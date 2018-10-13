@@ -14,7 +14,7 @@
  Semantic UI<br>
  Postico<br>
  Postgres<br>
-
+<br>
 <strong>Functionality :</strong>
 <strong>Students :</strong> CRUD functionlity.First and last name required, age limit of 150, and deletion enabled via an ajax call.
 
