@@ -5,23 +5,23 @@
  The principal of the school reaches out to you and asks you to create a website that enables logged in users to do common tasks needed to run a school. When logged in you should be able to manage students, instructors, courses, and cohorts.
  
  <h3>Built with</h3>
- Ruby on Rails
- Devise for user authentication
- jQuery
- Javascript
- HTML
- CSS/SCSS
- Semantic UI
- Postico
- Postgres
+ Ruby on Rails<br>
+ Devise for user authentication<br>
+ jQuery<br>
+ Javascript<br>
+ HTML<br>
+ CSS/SCSS<br>
+ Semantic UI<br>
+ Postico<br>
+ Postgres<br>
 
-Functionality :
-Students : CRUD functionlity.First and last name required, age limit of 150, and deletion enabled via an ajax call.
+<strong>Functionality :</strong>
+<strong>Students :</strong> CRUD functionlity.First and last name required, age limit of 150, and deletion enabled via an ajax call.
 
-Instructors : CRUD functionlity.First and last name required, age limit of 150, salary can't be less then 0, highest completed education limited to HS, College, Masters, PHD and deletion enabled via an ajax call.
+<strong>Instructors :</strong> CRUD functionlity.First and last name required, age limit of 150, salary can't be less then 0, highest completed education limited to HS, College, Masters, PHD and deletion enabled via an ajax call.
 
-Cohorts : CRUD functionlity.Instructors can be added to cohorts, cohorts can be added to Courses and students can be added to cohorts. Deletion enabled via AJAX call. User can view start and end date, instructor teaching the cohort and students in the cohort.
+<strong>Cohorts :</strong> CRUD functionlity.Instructors can be added to cohorts, cohorts can be added to Courses and students can be added to cohorts. Deletion enabled via AJAX call. User can view start and end date, instructor teaching the cohort and students in the cohort.
 
-Courses : CRUD functionlity. name requiremnt,total in calss hours must be greater than, and deletion eneabled via ajax call
+<strong>Courses :</strong> CRUD functionlity. name requiremnt,total in calss hours must be greater than, and deletion eneabled via ajax call
 
-CRUD : Create,Read,Update,Delete
+<strong>CRUD : Create,Read,Update,Delete</strong>
