@@ -17,7 +17,6 @@
 <br>
 <strong>Functionality :</strong>
 <strong>Students :</strong> CRUD functionlity.First and last name required, age limit of 150, and deletion enabled via an ajax call.
-
 <strong>Instructors :</strong> CRUD functionlity.First and last name required, age limit of 150, salary can't be less then 0, highest completed education limited to HS, College, Masters, PHD and deletion enabled via an ajax call.
 
 <strong>Cohorts :</strong> CRUD functionlity.Instructors can be added to cohorts, cohorts can be added to Courses and students can be added to cohorts. Deletion enabled via AJAX call. User can view start and end date, instructor teaching the cohort and students in the cohort.
